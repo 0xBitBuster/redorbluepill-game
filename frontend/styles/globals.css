@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: url('/background.jpg');
+    background-color: #111;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.glow-text__white {
+    color: #fff;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, .7),
+        0 0 40px rgba(255, 255, 255, .7),
+        0 0 100px rgba(255, 255, 255, .7);
+}
+.glow-text__grey {
+    color: #C2C2C2;
+    text-shadow:
+        0 0 10px rgba(194, 194, 194, .7),
+        0 0 40px rgba(194, 194, 194, .7),
+        0 0 100px rgba(194, 194, 194, .7);
+}
+.glow-text__blue {
+    color: #38E3FF;
+    text-shadow:
+        0 0 10px rgba(56, 227, 255, .7),
+        0 0 40px rgba(56, 227, 255, .7),
+        0 0 100px rgba(56, 227, 255, .7);
+}
+.glow-text__red {
+    color: #FF3131;
+    text-shadow:
+        0 0 10px rgba(255, 49, 49, .7),
+        0 0 40px rgba(255, 49, 49, .7),
+        0 0 100px rgba(255, 49, 49, .7);
+}
+
+.glow-textshadow__red {
+    text-shadow: rgba(255, 49, 49, .8) 1px 0 10px;
+}
+.glow-textshadow__blue {
+    text-shadow: rgba(56, 227, 255, .8) 1px 0 10px;
+}
+
+.glow-btn__red {
+    background: #FF3131;
+    box-shadow: 0 0 5px #FF3131,
+                0 0 25px #FF3131,
+                0 0 50px #FF3131,
+                0 0 200px #FF3131;
+     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+.glow-btn__red:hover {
+    background: #e53030;
+    box-shadow: 0 0 5px #e53030,
+                0 0 25px #e53030,
+                0 0 50px #e53030,
+                0 0 200px #e53030;
+}
+
+.glow-img__red {
+    box-shadow:
+        0 0 1px rgba(255, 49, 49, .7),
+        0 0 15px rgba(255, 49, 49, .7),
+        0 0 30px rgba(255, 49, 49, .7);
+}
+.glow-img__blue {
+    box-shadow:
+        0 0 1px rgba(56, 227, 255, .7),
+        0 0 15px rgba(56, 227, 255, .7),
+        0 0 30px rgba(56, 227, 255, .7);
+}

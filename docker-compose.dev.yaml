@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./backend:/usr/src/app/
+      - /usr/src/app/node_modules
+    ports:
+      - "127.0.0.1:4000:4000"
+    restart: always
+    links:
+      - redis
+    depends_on:
+      - redis
+    environment:
+      - PORT=4000
+      - NODE_ENV=development
+      - REDIS_HOST=redis
+      - MONGO_URI=YOUR_MONGO_URI
+      - JWT_SECRET=YOUR_JWT_SECRET
+      - ADMIN_PASSWORD=YOUR_ADMIN_PASSWORD
+      - CLOUDINARY_NAME=YOUR_CLOUDINARY_NAME
+      - CLOUDINARY_API_KEY=YOUR_CLOUDINARY_API_KEY
+      - CLOUDINARY_API_SECRET=YOUR_CLOUDINARY_API_SECRET
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./frontend:/usr/src/app/
+      - /usr/src/app/node_modules
+    ports:
+      - "127.0.0.1:3000:3000"
+    restart: always
+
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - "127.0.0.1:6379:6379"
